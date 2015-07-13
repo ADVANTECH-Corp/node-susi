@@ -9,7 +9,7 @@ $ npm install node-SUSI
 
 ## Usage
 
-This module uses the SUSI driver (http://www.airspayce.com/mikem/bcm2835/) that requires access to 
+This module uses the SUSI driver that requires access to 
 /open/mem. Because of this, you will typically run node with admin privileges.
 
 The first step is initialization(select) specifying the sensor or IO type . It should work for SUSI HWM function. If the initialization succeeds when you can call the read function to obtain the latest readout from the ADVANTECH platform. Readout values contains a temperature...etc property.
