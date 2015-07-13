@@ -1,0 +1,21 @@
+{
+  "author": "Neo Lo",
+  "name": "node-SUSI",
+  "description": "Access data from SUSI  on ADVANTECH platform",
+  "version": "0.0.1",
+  "repository": {
+    "url": "https://github.com/ADVANTECH-Corp/node-SUSI"
+  },
+  "scripts": {
+    "configure": "node-gyp configure",
+    "build": "node-gyp build"
+  },
+  "main": "./build/Release/node-SUSI",
+   "devDependencies": {
+    "nan": "^1.8.4",
+    "mocha": "^2.2.5",
+    "node-gyp": "^1.0.3"
+  },
+  "engines" : { "node" : ">=0.12 <0.13" },
+  "license" : "Apache-2.0"
+}
