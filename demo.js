@@ -1,7 +1,7 @@
 // Module node-SUSI demo
 // Reads CPU Temperature from ADVANTECH platform
 
-var sensorLib = require('../node-SUSI');
+var sensorLib = require('../node-susi');
 var cpuIndex = 0;
 
 var sensor = {
