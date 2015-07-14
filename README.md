@@ -1,10 +1,10 @@
-# node-SUSI
+# node-susi
 
 This node.js module supports SUSI driver function from ADVANTECH platform.
 
 ## Installation
 ``` bash
-$ npm install node-SUSI
+$ npm install node-susi
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ The first step is initialization(select) specifying the sensor or IO type . It s
 This sample queries the SUSI HWM CPU temperature and displays the result on the console. 
 
 ``` javascript
-var sensorLib = require('node-SUSI');
+var sensorLib = require('node-susi');
 var cpuIndex = 0;
 
 var sensor = {
