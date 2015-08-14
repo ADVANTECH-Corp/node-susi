@@ -1,21 +1,27 @@
 {
   "author": "Neo Lo",
   "name": "node-susi",
-  "description": "Access data from SUSI  on ADVANTECH platform",
+  "description": "Access data from SUSI on ADVANTECH platform",
   "version": "0.0.4",
   "repository": {
     "url": "https://github.com/ADVANTECH-Corp/node-SUSI"
   },
   "scripts": {
-    "configure": "node-gyp configure",
-    "build": "node-gyp build",
-    "install": "node-gyp rebuild"
+    "install": "node-pre-gyp install --fallback-to-build"
   },
-  "main": "./build/Release/node-SUSI",
+  "main": "index.js",
   "dependencies": {
     "nan": "^1.8.4",
     "mocha": "^2.2.5",
-    "node-gyp": "^1.0.3"
+    "node-gyp": "^1.0.3",
+    "node-pre-gyp": "0.5.x"
+  },
+  "binary": {
+      "module_name" : "node_SUSI",
+      "module_path" : "./nodes/{version}/{platform}/{arch}/",
+      "remote_path" : "./jahuang0824/pre-build-nodes/raw/master/",
+      "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz",
+      "host"        : "https://github.com/"
   },
   "engines": {
     "node": ">=0.10 <0.13"

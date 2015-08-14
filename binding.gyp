@@ -1,32 +1,26 @@
 {
   'targets':[
     {
-      'target_name':'node-SUSI',
+      'target_name':'<(module_name)',
       'include_dirs':[
         "<!(node -e \"require('nan')\")"
+      ],
+      'sources':[
+        'node-SUSI.cpp',
+        'node-SUSI-function-define.cpp'
       ],
       'conditions':[
         [
           'OS=="linux"',
           {
-            'sources':[
-              'node-SUSI.cpp',
-              'node-SUSI-function-define.cpp'
-            ],
             'libraries':[
               '-lSUSI-4.00'
-            ],
-
-          },
-
+            ]
+          }
         ],
         [
           'OS=="win"',
           {
-            'sources':[
-              'node-SUSI.cpp',
-              'node-SUSI-function-define.cpp'
-            ],
             'libraries':[
               'Susi4.lib'
             ],
@@ -50,6 +44,18 @@
             ]
           }
         ]
+      ]
+    },
+
+    {
+      "target_name": "action_after_build",
+      "type": "none",
+      "dependencies": [ "<(module_name)" ],
+      "copies": [
+        {
+          "files": [ "<(PRODUCT_DIR)\\<(module_name).node" ],
+          "destination": "<(module_path)"
+        }
       ]
     }
   ]
