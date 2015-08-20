@@ -2,7 +2,7 @@
   "author": "Neo Lo",
   "name": "node-susi",
   "description": "Access data from SUSI on ADVANTECH platform",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "repository": {
     "url": "https://github.com/ADVANTECH-Corp/node-SUSI"
   },
