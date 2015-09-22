@@ -1,4 +1,4 @@
-#include <node.h>
+//#include <node.h>
 #include <nan.h>
 #include "node-SUSI.h"
 
@@ -10,26 +10,16 @@ using v8::String;
 // NativeExtension.cc represents the top level of the module. 
 // C++ constructs that are exposed to javascript are exported here
 
-void InitAll(Handle<Object> exports) {
-  exports->Set(NanNew<String>("getHardwareMonitor"),
-    NanNew<FunctionTemplate>(getHardwareMonitor)->GetFunction());
-  exports->Set(NanNew<String>("getHardwareMonitorString"),
-    NanNew<FunctionTemplate>(getHardwareMonitorString)->GetFunction());
-  exports->Set(NanNew<String>("getVgaBacklight"),
-    NanNew<FunctionTemplate>(getVgaBacklight)->GetFunction());
-  exports->Set(NanNew<String>("setVgaBacklight"),
-    NanNew<FunctionTemplate>(setVgaBacklight)->GetFunction());
-  exports->Set(NanNew<String>("getGPIO"),
-    NanNew<FunctionTemplate>(getGPIO)->GetFunction());
-  exports->Set(NanNew<String>("setGPIO"),
-    NanNew<FunctionTemplate>(setGPIO)->GetFunction());
-  exports->Set(NanNew<String>("getWatchDog"),
-    NanNew<FunctionTemplate>(getWatchDog)->GetFunction());
-  exports->Set(NanNew<String>("setWatchDog"),
-    NanNew<FunctionTemplate>(setWatchDog)->GetFunction());
-  exports->Set(NanNew<String>("aString"),
-    NanNew<FunctionTemplate>(aString)->GetFunction());
-
+NAN_MODULE_INIT(Init) {
+	NAN_EXPORT(target, getHardwareMonitor);
+	NAN_EXPORT(target, getHardwareMonitorString);
+	NAN_EXPORT(target, getVgaBacklight);
+	NAN_EXPORT(target, setVgaBacklight);
+	NAN_EXPORT(target, getGPIO);
+	NAN_EXPORT(target, setGPIO);
+	NAN_EXPORT(target, getWatchDog);
+	NAN_EXPORT(target, setWatchDog);
+	NAN_EXPORT(target, aString);
 }
 
-NODE_MODULE(node_SUSI, InitAll)
+NODE_MODULE(node_SUSI, Init)
