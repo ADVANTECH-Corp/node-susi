@@ -34,6 +34,7 @@
   "keywords": [
     "ADVANTECH",
     "SUSI",
-    "API"
+    "API",
+	"node-red"
   ]
 }

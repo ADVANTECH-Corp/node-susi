@@ -59,3 +59,6 @@ $ node-gyp build
 
 [4]: Node.js native addon build tool - https://github.com/TooTallNate/node-gyp
 
+## License
+Copyright 2014, 2015 ADVANTECH Corp. under [the Apache 2.0 license](LICENSE).
+
